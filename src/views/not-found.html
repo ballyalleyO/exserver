@@ -10,22 +10,17 @@
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous"
         >
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-        body {
-            font-family: sans-serif;
-        }
-
-    </style>
+    <link rel="stylesheet" href="/css/input.css">
+    <script src="https://kit.fontawesome.com/8880c8771e.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Page not found</title>
 </head>
 <body>
-    <header class="main-header__header">
+    <header class="main-header">
         <nav class="main-header__nav">
             <div class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
-                <div class="flex items-center flex-shrink-0 text-white mr-6">
-                    <span class="font-semibold text-xl tracking-tight">bee <i class="fas fa-phone"> beez</i></span>
+                <div class="flex items-center flex-shrink-0 text-white mr-16">
+                    <a href="/"><span class="font-semibold text-4xl tracking-tight">bee <i class="fa-solid fa-hippo">beez</i> </span></a>
                 </div>
                 <div class="block lg:hidden">
                     <button class="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white">
@@ -36,12 +31,29 @@
                     </button>
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-                    <div class="text-sm lg:flex-grow">
-                        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                            Op Shop
+                    <div class="text-lg lg:flex-grow ">
+                        <a href="/cart" class="active main-header__list block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-6">
+                            SHOP NOW
                         </a>
-                        <a href="/cart" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-                            Services
+                         <a href="/about" class="main-header__list block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-6">
+                            About
+                        </a>
+                        <a href="/tech" class="main-header__list block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-6">
+                            Technology
+                        </a>
+                        <a href="/cart" class="main-header__list block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-6">
+                            Support
+                        </a>
+                        <a href="/tech" class="main-header__list block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-6">
+                            Dummy
+                        </a>
+                        <a href="/cart" class="main-header__list block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-6">
+                            Dummy
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/business" class="text-lg inline-block px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">
+                            BUSINESS
                         </a>
                     </div>
                 </div>

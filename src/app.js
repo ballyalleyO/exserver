@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const adminRoutes = require('./routes/admin');
+const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
 
@@ -11,10 +11,11 @@ const PORT = 8000;
 
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
 
   console.log(`Server is listening to PORT: ${PORT}...`)
 
-app.use('/admin', adminRoutes);
+app.use('/admin', adminData.routes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
