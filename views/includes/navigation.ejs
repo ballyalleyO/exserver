@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous"
-        >
-    <link rel="stylesheet" href="/css/input.css">
-    <script src="https://kit.fontawesome.com/8880c8771e.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Cart</title>
-</head>
-<body>
-    <header class="main-header">
+<header class="main-header">
         <nav class="main-header__nav">
             <div class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
                 <div class="flex items-center flex-shrink-0 text-white mr-16">
-                    <a href="/"><span class="font-semibold text-4xl tracking-tight">bee <i class="fa-solid fa-hippo">beez</i> </span></a>
+                    <a href="/" class="<%= path === '/' ? 'active' : '' %>"><span class="font-semibold text-4xl tracking-tight">bee <i class="fa-solid fa-hippo">beez</i> </span></a>
                 </div>
                 <div class="block lg:hidden">
                     <button class="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white">
@@ -32,7 +14,7 @@
                 </div>
                 <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                     <div class="text-lg lg:flex-grow ">
-                        <a href="/cart" class="active main-header__list block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-6">
+                        <a href="/admin/cart" class="<%= path === '/admin/cart' ? 'active main-header__list block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-6' : 'main-header__list block mt-4 lg:inline-block lg:mt-0 text-yellow-200 hover:text-white mr-6' %>">
                             SHOP NOW
                         </a>
                          <a href="/about" class="main-header__list block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-6">
@@ -59,19 +41,4 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <main>
-      <form action="/admin/cart" class="product-form w-full max-w-lg " method="POST">
-       <div class="parent-div-input card flex items-center justify-center w-screen mt-20">
-        <div class="card-body p-4">
-        <div class="form-control md:inline-block md:items-center mb-6 w-full">
-            <label for="title" class="text-gray-500 font-bold mb-4 md:mb-0 pr-4">Title</label>
-            <input type="text" name="title" id="title" class="inline-block input-shop bg-gray-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
-        </div>
-        <button type="submit" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Add to Cart</button>
-        </div>
-        </div>
-      </form>
-    </main>
-</body>
-</html>
+</header>
