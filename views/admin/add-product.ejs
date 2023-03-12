@@ -1,9 +1,9 @@
-<%- include('includes/head.ejs') %>
+<%- include('../includes/head.ejs') %>
 </head>
 <body>
-    <%- include('includes/navigation.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
     <main>
-      <form action="/admin/cart" class="product-form w-full max-w-lg " method="POST">
+      <form action="/admin/add-product" class="product-form w-full max-w-lg " method="POST">
        <div class="parent-div-input card flex items-center mt-20">
         <div class="card-body p-4">
         <div class="form-control md:inline-block md:items-center mb-6 w-full">
@@ -15,4 +15,4 @@
         </div>
       </form>
     </main>
-<%- include('includes/end.ejs') %>
+<%- include('../includes/end.ejs') %>
