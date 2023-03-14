@@ -28,6 +28,8 @@ class Product {
     }
 
     save() {
+      //create random id for each product
+      this.id = Math.floor(Math.random() * 10000).toString()
        getProductsFromFile(products => {
          products.push(this);
          fs.writeFile(p, JSON.stringify(products), (err) => {
