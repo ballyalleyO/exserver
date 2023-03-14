@@ -2,8 +2,10 @@ const  Product = require('../models/Product')
 
 const SHOP = "shop/product-list"
 const INDEX = "shop/index"
-const CART = "shop/cart"
+const CART = "/cart"
 const CHECKOUT = "shop/checkout";
+const ORDERS = "shop/orders";
+
 
 
 //method POST
@@ -38,6 +40,14 @@ exports.getCart = (req, res, next) => {
     pageTitle: "Cart"
   })
 };
+
+exports.getOrders = (req, res, next) => {
+  res.render(ORDERS, {
+    path: "/orders",
+    pageTitle: "Orders",
+  });
+};
+
 
 exports.getCheckout = (req, res, next) => {
   res.render(CHECKOUT, {

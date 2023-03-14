@@ -18,7 +18,7 @@
                     <div>
                         <figure>
                             <img
-                                src="https://online.thermospas.com/v/vspfiles/photos/SA1009-2T.jpg"
+                                src="<%= product.imageUrl %>"
                                 alt="<%= product.title %>"
                                 class="w-full" />
                             </figure>
@@ -26,11 +26,11 @@
                                         <h2 class="card-title block">
                                             <%= product.title %>
                                         </h2>
-                                        <h4 class="card-title product__price text-2xl">
-                                            <%= product.price %>$19.99
+                                        <h4 class="card-price product__price text-5xl font-bold mt-2 text-center">
+                                            $ <%= product.price %>
                                         </h4>
-                                    <div class="card-description grid grid-rows-3 my-4 gap-2 item-center">
-                                    <p class="text-center"><%= product.description %>asasdnlasndnasdnsa</p>
+                                    <div class="card-description grid grid-rows-2 my-4 mt-4 gap-2 item-center">
+                                        <p class="text-center mt-4"><%= product.description %></p>
                                     </div>
                                     <div class="card-actions">
                                     <button
@@ -38,17 +38,17 @@
                                         >Add to Cart
                                     </button>
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
                 <% } %>
                 </div>
             </div>
             <% } else { %>
-        <div class="text-center m-auto">
-            <h1 class="card-title text-8xl mt-10"> No Products Found!</h1>
+        <div class="container text-center mt-40">
+            <div class="card hero m-20 ">
+                <h1 class="card-title text-8xl"> No Products Found!</h1>
+            </div>
         </div>
         <% } %>
 
