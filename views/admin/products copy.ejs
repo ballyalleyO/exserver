@@ -20,7 +20,7 @@
                             <img
                                 src="<%= product.imageUrl %>"
                                 alt="<%= product.title %>"
-                                class="w-full h-100" />
+                                class="w-full" />
                             </figure>
                                 <div class="px-2 py-2 content m-4">
                                         <h2 class="card-title block">
@@ -33,12 +33,9 @@
                                         <p class="text-center mt-4"><%= product.description %></p>
                                     </div>
                                     <div class="card-actions">
-                                        <a href="/products/<%= product.id %>" class="btn">Details</a>
-                                        <form action="/add-to-cart" method="POST">
-                                    <input type="hidden" name="productId" value="<%= product.id %>">
-                                    <button class="btn btn-primary" type="submit">Add to Cart</button>
-                                        </form>
-                                    </div>
+                                    <a href="/admin/edit-product"  class="btn btn-primary">Edit</a>
+                                    <a href="#"  class="btn btn-accent">Delete</a>
+                                </div>
                             </div>
                         </div>
                     </div>

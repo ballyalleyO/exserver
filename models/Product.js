@@ -8,7 +8,6 @@ const p = path.join(
     "products.json"
   );
 
-
 const getProductsFromFile = (cb) => {
      fs.readFile(p, (err, fileContent) => {
        if (err) {
@@ -36,13 +35,6 @@ class Product {
            console.log(err);
          });
        })
-        fs.readFile(p,(err,fileContent)=> {})
-    }
-    //price coma on 3rd digit
-    if (price) {
-      this.price = price.toFixed(2)
-      console.log(this.price)
-      return this.price;
     }
 
     static fetchAll(cb) {

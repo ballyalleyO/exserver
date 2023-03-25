@@ -1,12 +1,12 @@
-const  Product = require('../models/Product')
+const Product = require('../models/Product')
+const Cart = require('../models/Cart')
 
 const SHOP = "shop/product-list"
 const INDEX = "shop/index"
-const CART = "/cart"
+const CART = "shop/cart"
 const CHECKOUT = "shop/checkout";
 const ORDERS = "shop/orders";
-
-
+const DETAILS = "shop/product-details";
 
 //method POST
 //url
@@ -24,14 +24,13 @@ exports.getProducts = (req, res, next) => {
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId, product => {
-    res.render('shop/product-details', {
+    res.render(DETAILS, {
       pageTitle: product.title,
       product: product,
       path: '/products'
     })
   })
 };
-
 
 exports.getIndex = (req, res, next) => {
   Product.fetchAll(products => {
@@ -52,13 +51,20 @@ exports.getCart = (req, res, next) => {
   })
 };
 
+exports.postCart = (req, res, next) => {
+  const prodId = req.body.productId;
+  Product.findById(prodId, (product) => {
+    Cart.addProduct(prodId, product.price)
+  })
+  res.redirect('/cart')
+}
+
 exports.getOrders = (req, res, next) => {
   res.render(ORDERS, {
     path: "/orders",
     pageTitle: "Orders",
   });
 };
-
 
 exports.getCheckout = (req, res, next) => {
   res.render(CHECKOUT, {
@@ -67,3 +73,5 @@ exports.getCheckout = (req, res, next) => {
   })
 
 };
+
+
