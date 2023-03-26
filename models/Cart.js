@@ -48,7 +48,6 @@ class Cart {
         })
     }
 
-
     static deleteProduct(id, prodPrice) {
       //read/look in json
       fs.readFile(p, (err, fileContent) => {
