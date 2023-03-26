@@ -24,11 +24,15 @@ router.get(`${baseUrl}/cart/:productId`, shopController.getProduct);
 
 //Method GET
 //URL /cart
-router.get(`${baseUrl}/cart`, shopController.getCart);
+router.get('/cart', shopController.getCart);
 
 //Method POST
 //URL /cart
-router.post(`/cart`, shopController.postCart)
+router.post('/cart', shopController.postCart)
+
+//Method POST
+//URL /cart-delete-item
+router.post('/cart-delete-item', shopController.postCartDeleteProduct)
 
 //Method GET
 //URL /cart

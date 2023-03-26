@@ -59,8 +59,12 @@
                 <% if (editing) { %><%= product.description %><% } %>
             </textarea>
         </div>
+
+        <% if (editing) { %>
+            <input type="hidden" name="productId" value="<%= product.id %>">
+        <% } %>
         <button type="submit" class="shadow mt-10 bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
-            <% if (editing) { %><b>UPDATE</b> PRODUCT<% } else { %>Add to Cart<% } %></button>
+            <% if (editing) { %>UPDATE PRODUCT<% } else { %>Add to Cart<% } %></button>
         </div>
         </div>
       </form>
