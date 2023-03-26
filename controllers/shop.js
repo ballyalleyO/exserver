@@ -12,35 +12,43 @@ const DETAILS = "shop/product-details";
 //method POST
 //url
 exports.getProducts = (req, res, next) => {
-  Product.fetchAll(products => {
-        res.render(SHOP, {
-          prods: products,
-          pageTitle: "Shop",
-          path: "/products",
-        });
+  Product.fetchAll()
+  .then(([rows, fieldData]) => {
+    res.render(SHOP, {
+      prods: rows,
+      pageTitle: "Shop",
+      path: "/products",
     });
+  })
+  .catch(err => console.log(err))
+
   console.log("Logging in TECHNOLOGY...".white.inverse);
 };
 
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
-  Product.findById(prodId, product => {
-    res.render(DETAILS, {
-      pageTitle: product.title,
-      product: product,
-      path: '/products'
+  Product
+    .findById(prodId)
+    .then(([product]) => {
+      res.render(DETAILS, {
+        pageTitle: product.title,
+        product: product[0],
+        path: "/products",
+      });
     })
-  })
+    .catch(err => console.log(err))
 };
 
 exports.getIndex = (req, res, next) => {
-  Product.fetchAll(products => {
-        res.render(INDEX, {
-          prods: products,
-          pageTitle: "Shop",
-          path: "/"
-        });
+  Product.fetchAll()
+  .then(([rows, fieldData]) => {
+    res.render(INDEX, {
+      prods: rows,
+      pageTitle: "Shop",
+      path: "/",
     });
+  })
+  .catch(err => console.log(err))
   console.log("Logging in INDEX...".white.inverse);
 };
 

@@ -26,9 +26,16 @@
                                 <h2 class="card-title block text-2xl m-5" id="prod-title">
                                     <%= product.title %>
                                 </h2>
-                                <h4 class="card-price text-5xl font-bold mt-2 text-center">
-                                 <%= product.price %>
-                                </h4>
+                                <div class="w-96 block text-center">
+                                    <span class="inline-flex text-2xl p-4 badge bg-error justify-center ">
+                                        NZ$
+                                        </span>
+                                        <span>
+                                            <h4 class="card-price text-5xl font-bold mt-2 text-center">
+                                            <%= product.price %>
+                                        </h4>
+                                </span>
+                                </div>
                             </div>
                             <div class="card-description block h-20 my-4 mt-4 gap-2 block item-center">
                                     <p class="text-center mt-4"><%= product.description %></p>

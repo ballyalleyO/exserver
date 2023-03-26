@@ -3,7 +3,6 @@ const path = require('path');
 
 const p = path.join(path.dirname(require.main.filename), "data", "cart.json");
 
-
 class Cart {
     static addProduct(id, productPrice) {
         //fetch the previous cart
@@ -36,8 +35,8 @@ class Cart {
             cart.products = [...cart.products, updatedProduct];
           }
           //parse the product price  before adding to the database
-          productPrice = productPrice.replace("$", "");
-          productPrice = productPrice.replace(",", "");
+          // productPrice = productPrice.replace("$", "");
+          // productPrice = productPrice.replace(",", "");
 
         let productPriceParsed = parseFloat(productPrice);
 
