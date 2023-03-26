@@ -2,6 +2,7 @@ const Product = require("../models/Product");
 
 const EDIT = "admin/edit-product";
 const PRODUCTS = "admin/products";
+require('colors')
 
 
 //method GET
@@ -12,6 +13,7 @@ exports.getAddProduct = (req, res, next) => {
     path: "admin/add-product",
     editing: false
   });
+  console.log("Logging in ADD-PRODUCT...".white.inverse);
 };
 
 //method POST
@@ -81,6 +83,7 @@ exports.getProducts = (req, res, next) => {
             pageTitle: 'Admin: Products'
         })
     })
+  console.log("Logging in ADMIN...".white.inverse);
 }
 
 exports.postDeleteProduct = (req, res, next) => {

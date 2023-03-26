@@ -1,6 +1,8 @@
 const path = require('path')
 const express = require('express');
 const bodyParser = require('body-parser');
+const db = require('./helper/db')
+require('colors')
 
 const errorController = require('./controllers/errors')
 
@@ -14,10 +16,13 @@ app.set("views", "views");
 const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
+// db.execute('');
+
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-  console.log(`Server is listening to PORT: ${PORT}...`)
+  console.log(`Server is listening to PORT: ${PORT}...`.blue.inverse);
 
 app.use('/admin', adminData);
 app.use(shopRoutes);

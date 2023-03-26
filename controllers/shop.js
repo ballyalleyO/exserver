@@ -1,5 +1,6 @@
 const Product = require('../models/Product')
 const Cart = require('../models/Cart')
+require('colors')
 
 const SHOP = "shop/product-list"
 const INDEX = "shop/index"
@@ -18,7 +19,7 @@ exports.getProducts = (req, res, next) => {
           path: "/products",
         });
     });
-  console.log("Middleware logging in ROOT...");
+  console.log("Logging in TECHNOLOGY...".white.inverse);
 };
 
 exports.getProduct = (req, res, next) => {
@@ -40,7 +41,7 @@ exports.getIndex = (req, res, next) => {
           path: "/"
         });
     });
-  console.log("Middleware logging in INDEX...");
+  console.log("Logging in INDEX...".white.inverse);
 };
 
 
@@ -64,6 +65,7 @@ exports.getCart = (req, res, next) => {
       });
     })
   })
+  console.log("Logging in CART...".white.inverse);
 };
 
 exports.postCart = (req, res, next) => {
