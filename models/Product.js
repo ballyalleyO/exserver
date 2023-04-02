@@ -1,46 +1,37 @@
-const mongoConnect = require('../helper/db');
-const MongoClient = mongoConnect.MongoClient;
+const getDb = require('../helper/db').getDb;
 
 class Product {
-  constructor(id, title, imageUrl, description, price) {
-    this.id = id;
+  constructor(title, price, imageUrl, description) {
     this.title = title;
+    this.price = price;
     this.imageUrl = imageUrl;
     this.description = description;
-    this.price = price;
   }
 
   save() {
+    const db = getDb();
+    return db
+      .collection("products")
+      .insertOne(this)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => console.log(err));
+    }
 
+    static fetchAll() {
+      const db = getDb();
+      return db
+        .collection('products')
+        .find()
+        .toArray()
+        .then(products => {
+          console.log(products);
+          return products;
+        })
+        .catch(err => console.log(err));
   }
 }
-
-const Sequelize = require('sequelize');
-
-const sequelize = require('../helper/db-sql.js_bu');
-
-const Product = sequelize.define('product', {
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    allowNull: false,
-    primaryKey: true
-  },
-  title: Sequelize.STRING,
-  price: {
-    type: Sequelize.DOUBLE,
-    allowNull: false
-  },
-  imageUrl: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  description: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
-});
-
 
 module.exports = Product;
 
