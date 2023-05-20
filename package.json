@@ -9,7 +9,7 @@
   "scripts": {
     "start": "NODE_ENV=production node --no-warnings app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --no-warnings app.js"
+    "dev": "node --no-warnings app.js"
   },
   "author": "Bally Lomibao",
   "license": "MIT",
